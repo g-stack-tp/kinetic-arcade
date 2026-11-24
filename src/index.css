@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-canvas: #faf8ff;
+  --color-surface: #ffffff;
+  --color-well: #f2f3ff;
+  --color-well-high: #e2e7ff;
+  --color-ink: #131b2e;
+  --color-ink-muted: #464554;
+
+  --color-indigo-core: #4648d4;
+  --color-indigo-bright: #6366f1;
+  --color-indigo-edge: #3739b8;
+
+  --color-amber-core: #f59e0b;
+  --color-amber-edge: #d97706;
+
+  --color-emerald-core: #10b981;
+  --color-emerald-edge: #059669;
+
+  --color-coral-core: #f43f5e;
+  --color-coral-edge: #e11d48;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #faf8ff;
+    color: #131b2e;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Tactile 3D Extruded Buttons */
+.btn-tactile-primary {
+  background-color: #4648d4;
+  color: #ffffff;
+  border: 1px solid #3c3ec4;
+  box-shadow:
+    0 4px 0 0 #2f2ebe,
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms ease;
+}
+
+.btn-tactile-primary:hover:not(:disabled) {
+  background-color: #5254e0;
+}
+
+.btn-tactile-primary:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow:
+    0 2px 0 0 #2f2ebe,
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-tactile-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-tactile-amber {
+  background-color: #f59e0b;
+  color: #ffffff;
+  border: 1px solid #d97706;
+  box-shadow:
+    0 4px 0 0 #b45309,
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms ease;
+}
+
+.btn-tactile-amber:hover:not(:disabled) {
+  background-color: #fbbf24;
+  color: #2a1700;
+}
+
+.btn-tactile-amber:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow:
+    0 2px 0 0 #b45309,
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-tactile-amber:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-tactile-emerald {
+  background-color: #10b981;
+  color: #ffffff;
+  border: 1px solid #059669;
+  box-shadow:
+    0 4px 0 0 #047857,
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms ease;
+}
+
+.btn-tactile-emerald:hover:not(:disabled) {
+  background-color: #14c78b;
+}
+
+.btn-tactile-emerald:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow:
+    0 2px 0 0 #047857,
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-tactile-ghost {
+  background-color: #ffffff;
+  color: #131b2e;
+  border: 1px solid #d5daf0;
+  box-shadow:
+    0 3px 0 0 #e2e7ff,
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms ease;
+}
+
+.btn-tactile-ghost:hover:not(:disabled) {
+  background-color: #f2f3ff;
+}
+
+.btn-tactile-ghost:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 0 #e2e7ff;
+}
+
+/* Resting Surface Cards */
+.arcade-card {
+  background-color: #ffffff;
+  border: 1px solid #dfe3f4;
+  box-shadow:
+    0 2px 4px -1px rgba(19, 27, 46, 0.04),
+    0 4px 12px -2px rgba(70, 72, 212, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Recessed Progress Well */
+.arcade-well {
+  background-color: #eaedff;
+  box-shadow: inset 0 2px 4px rgba(19, 27, 46, 0.07);
+}
+
+/* Interactive Habit/Quest Check Ring Pulse */
+@keyframes checkRingPulse {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45);
+  }
+  70% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.animate-check-pulse {
+  animation: checkRingPulse 380ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Subtle Streak Count Pulse on Habit Completion */
+@keyframes streakRingPulse {
+  0% {
+    transform: scale(0.94);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.42);
+  }
+  70% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.animate-streak-pulse {
+  animation: streakRingPulse 380ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Input focus ring */
+.arcade-input {
+  background-color: #ffffff;
+  border: 1px solid #d5daf0;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.arcade-input:focus {
+  outline: none;
+  border-color: #4648d4;
+  box-shadow: 0 0 0 3px rgba(70, 72, 212, 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-tactile-primary,
+  .btn-tactile-amber,
+  .btn-tactile-emerald,
+  .btn-tactile-ghost,
+  .animate-check-pulse,
+  .animate-streak-pulse {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}

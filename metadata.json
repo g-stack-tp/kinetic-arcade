@@ -1,0 +1,6 @@
+{
+  "name": "Kinetic Arcade",
+  "description": "Tactile gamified productivity workspace for managing quests, daily habits, focus sprints, and earned rewards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
